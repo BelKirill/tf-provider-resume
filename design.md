@@ -3,27 +3,33 @@ Below is an idea for a CV in Terraform
 ## resource "resume"
 An example of a resume resource. This will create the document that will be stored in a document database in a json format.
 ```
-data "intro" "senior" {
+data "intro" senior {
+  type = "senior"
   version = "latest"
 }
 
-data "summary" "challenge" {
+data "summary" challenge {
+  type = "challenge"
   version = "latest"
 }
 
-data "position" "fundbox" {
+data "position" fundbox {
+  position = "fundbox"
   aspect = ["devops", "innovation"]
 }
 
-data "position" "compugen" {
+data "position" compugen {
+  position = "compugen"
   aspect = ["devops", "oms"]
 }
 
-data "position" "doit" {
+data "position" doit {
+  position = "doit"
   aspect = ["costs", "multicloud"]
 }
 
-data "position" "personetics" {
+data "position" personetics {
+  position = "personetics"
   aspect = ["tech_lead", "devops", "custom"]
 }
 
