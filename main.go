@@ -3,10 +3,11 @@ package main
 import (
 	"context"
 	"flag"
-	"log"
+	// "log"
 
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"github.com/hashicorp/terraform-provider-scaffolding-framework/internal/provider"
+	"github.com/charmbracelet/log"
+	"github.com/BelKirill/tf-provider-resume/internal/provider"
 )
 
 // Run "go generate" to format example terraform files and generate the docs for the registry/website
@@ -39,6 +40,8 @@ func main() {
 		Address: "registry.terraform.io/hashicorp/scaffolding",
 		Debug:   debug,
 	}
+
+	log.Info("Starting provider")
 
 	err := providerserver.Serve(context.Background(), provider.New(version), opts)
 
